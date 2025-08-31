@@ -20,7 +20,7 @@ const {
 // Basic booking routes (same as original)
 router.get('/', getAllBookings);
 router.post('/', createBooking);
-
+ 
 // NEW: Payment-related routes
 router.post('/payment-hold', createPaymentHold);
 router.put('/:id/confirm-payment', confirmPayment);

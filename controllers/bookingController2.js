@@ -171,7 +171,7 @@ const getAllBookings = async (req, res) => {
 const createBooking = async (req, res) => {
   try {
     const { 
-      userId, 
+      userId,  
       equipmentId, 
       startDate,     // Traditional mode
       endDate,       // Traditional mode
@@ -341,7 +341,7 @@ const createPaymentHold = async (req, res) => {
       endDate: bookingEndDate,
       selectedDates: bookingDates,
       totalAmount,
-      status: 'payment_hold',
+      status: 'payment_hold',   // window booked for 10 min
       paymentStatus: 'pending',
       isPaymentHold: true,
       paymentHoldExpiry: holdExpiry
@@ -408,7 +408,7 @@ const confirmPayment = async (req, res) => {
     }
 
     // Update booking to confirmed status
-    booking.status = 'pending'; // Pending owner approval
+    booking.status = 'pending'; // Pending delivery status 
     booking.paymentStatus = 'completed';
     booking.isPaymentHold = false;
     booking.paymentMethod = paymentMethod;
